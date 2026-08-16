@@ -10,6 +10,7 @@ import {
   ColorType,
   LineSeries,
   createChart,
+  createSeriesMarkers,
   type IChartApi,
 } from 'lightweight-charts'
 
@@ -100,7 +101,7 @@ function useChart(
         if (t.exitIndex !== null) m.push({ time: time(t.exitIndex), position: 'aboveBar', color: '#c0392b', shape: 'arrowDown', text: 'S' })
         return m
       })
-      ;(s as unknown as { setMarkers: (m: unknown[]) => void }).setMarkers(markers)
+      createSeriesMarkers(s, markers as never)
     } else if (kind === 'equity') {
       const area = chart.addSeries(AreaSeries, { lineColor: '#ff6a00', topColor: 'rgba(255,106,0,0.18)', bottomColor: 'rgba(255,106,0,0.02)', lineWidth: 2 })
       area.setData(data.equity.values.map((v, i) => ({ time: time(i), value: v })))
