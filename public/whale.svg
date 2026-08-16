@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 180" role="img" aria-label="Q 版鲸鱼">
+  <!-- 喷水柱 -->
+  <path d="M120 26 C120 10, 108 2, 102 8 C112 10, 114 18, 112 26" fill="none" stroke="#7fc8f8" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="96" cy="14" r="4" fill="#7fc8f8"/>
+  <circle cx="130" cy="10" r="3" fill="#7fc8f8"/>
+  <circle cx="140" cy="22" r="2.5" fill="#a8dcff"/>
+
+  <!-- 尾巴 -->
+  <path d="M196 96 Q216 78 224 66 Q214 88 202 96 Q220 100 228 108 Q212 106 196 104 Z" fill="#4a6fa5"/>
+
+  <!-- 身体 -->
+  <ellipse cx="118" cy="102" rx="82" ry="52" fill="#4a6fa5"/>
+
+  <!-- 肚皮 -->
+  <path d="M52 112 Q118 152 184 112 Q150 138 118 140 Q86 138 52 112 Z" fill="#eaf3fb"/>
+
+  <!-- 背鳍 -->
+  <path d="M130 52 Q142 36 152 52" fill="#3d5c89" stroke="#3d5c89" stroke-width="6" stroke-linecap="round"/>
+
+  <!-- 胸鳍 -->
+  <path d="M78 112 Q58 130 72 142" fill="none" stroke="#3d5c89" stroke-width="12" stroke-linecap="round"/>
+
+  <!-- 眼睛 -->
+  <circle cx="86" cy="88" r="15" fill="#ffffff"/>
+  <circle cx="89" cy="90" r="8" fill="#1a1a2e"/>
+  <circle cx="92" cy="86" r="3" fill="#ffffff"/>
+
+  <!-- 腮红 -->
+  <ellipse cx="62" cy="104" rx="10" ry="6" fill="#ffb3c1" opacity="0.75"/>
+
+  <!-- 微笑 -->
+  <path d="M78 112 Q90 122 102 112" fill="none" stroke="#1a1a2e" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- 小水泡 -->
+  <circle cx="196" cy="60" r="3" fill="#7fc8f8" opacity="0.8"/>
+  <circle cx="206" cy="46" r="2" fill="#a8dcff" opacity="0.7"/>
+</svg>

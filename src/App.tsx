@@ -165,7 +165,7 @@ export default function App() {
       {whale && <div className="whale">🐋</div>}
       <header>
         <h1
-          style={{ cursor: 'default' }}
+          style={{ cursor: 'default', display: 'flex', alignItems: 'center', gap: 10 }}
           onClick={() => {
             clicks.current += 1
             if (clicks.current >= 3) {
@@ -174,7 +174,14 @@ export default function App() {
               setTimeout(() => setWhale(false), 5000)
             }
           }}
-        >dsh-quant <span className="accent">·</span> Workbench</h1>
+        >
+          <img
+            src="./whale.svg"
+            alt="whale"
+            style={{ width: 44, height: 33, verticalAlign: 'middle' }}
+          />
+          dsh-quant <span className="accent">·</span> Workbench
+        </h1>
         <div className="sub">{data ? `${data.symbol ?? ''} ${data.interval ?? ''} · ${data.generatedAt?.slice(0, 10) ?? ''}` : 'paste dsh-quant data →'}</div>
       </header>
 
