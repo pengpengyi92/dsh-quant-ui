@@ -44,3 +44,19 @@ header .sub { font-size: 13px; color: var(--muted); font-family: "SF Mono", Menl
 .selector input { accent-color: var(--accent); }
 .panel { background: var(--panel); border: 1px solid var(--line); }
 .strategy { font-size: 14px; }
+
+/* 🐋 彩蛋：鲸鱼游过 */
+.whale {
+  position: fixed;
+  top: 12px;
+  left: -120px;
+  font-size: 72px;
+  z-index: 999;
+  pointer-events: none;
+  animation: whale-swim 5s linear forwards;
+}
+@keyframes whale-swim {
+  0% { left: -120px; transform: rotate(0deg); }
+  80% { left: calc(100% - 80px); transform: rotate(-8deg); }
+  100% { left: 110%; transform: rotate(-12deg); }
+}

@@ -123,6 +123,8 @@ export default function App() {
   const [text, setText] = useState('')
   const [data, setData] = useState<DemoData | null>(null)
   const [shown, setShown] = useState<Set<string>>(new Set(REQUIRED))
+  const [whale, setWhale] = useState(false) // 🐋 彩蛋：点击标题 3 次 → 鲸鱼游过
+  const clicks = useRef(0)
   const candlesRef = useRef<HTMLDivElement>(null)
   const equityRef = useRef<HTMLDivElement>(null)
   const navRef = useRef<HTMLDivElement>(null)
@@ -160,8 +162,19 @@ export default function App() {
 
   return (
     <div className="wrap">
+      {whale && <div className="whale">🐋</div>}
       <header>
-        <h1>dsh-quant <span className="accent">·</span> Workbench</h1>
+        <h1
+          style={{ cursor: 'default' }}
+          onClick={() => {
+            clicks.current += 1
+            if (clicks.current >= 3) {
+              clicks.current = 0
+              setWhale(true)
+              setTimeout(() => setWhale(false), 5000)
+            }
+          }}
+        >dsh-quant <span className="accent">·</span> Workbench</h1>
         <div className="sub">{data ? `${data.symbol ?? ''} ${data.interval ?? ''} · ${data.generatedAt?.slice(0, 10) ?? ''}` : 'paste dsh-quant data →'}</div>
       </header>
 
@@ -194,6 +207,12 @@ export default function App() {
             <Card label="Final NAV (net)" value={fund.finalNavNet.toFixed(4)} tone={fund.finalNavNet >= 1 ? 'pos' : 'neg'} />
             <Card label="Final AUM" value={fmtFund(fund.finalAum)} />
             <Card label="Peak AUM" value={fmtFund(fund.peakAum)} />
+            {fund.peakAum >= fund.initialCapital * 1.5 && (
+              <div className="card" style={{ borderColor: '#ff6a00', background: '#fff8f2' }}>
+                <div className="card-label">Status</div>
+                <div className="card-value" style={{ fontSize: 18 }}>🐋 WHALE MODE</div>
+              </div>
+            )}
             <Card label="Net Return" value={(fund.netReturnPct >= 0 ? '+' : '') + fund.netReturnPct.toFixed(2) + '%'} tone={fund.netReturnPct >= 0 ? 'pos' : 'neg'} />
             <Card label="Mgmt Fee" value={(fund.managementFeeTotal / 1e4).toFixed(1) + ' 万'} />
             <Card label="Perf Fee" value={(fund.performanceFeeTotal / 1e4).toFixed(1) + ' 万'} />
