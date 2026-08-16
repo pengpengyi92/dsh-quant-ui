@@ -1,5 +1,8 @@
 # dsh-quant-ui
 
+🌐 **Live demo**: https://dsh-quant-ui.pages.dev
+
+
 **Jane Street 风格量化工作台** —— dsh-quant 的官方前端。
 
 加载 dsh-quant 的 chart/回测数据（粘贴 JSON 或文件），渲染：
